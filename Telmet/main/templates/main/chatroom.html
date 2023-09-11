@@ -1,0 +1,40 @@
+{% extends "main/base.html" %}
+
+{% block extra-style %}
+<link rel="stylesheet" href="static/css/chatroom.css">
+{% endblock %}
+
+
+{% block content %}
+<div id="cur_time">
+    {{ cur_time }}
+</div>
+<div id="chat_messages"></div>
+
+<hr class="divde-line">
+
+<div class="stop-message">
+    <div class="warning-message">
+        <span id="default-start-message"></span>
+        <span id="abuse-cnt-message"></span>
+        <span id="default-middle-message"></span>
+        <span id="sexual-cnt-message"></span>
+        <span id="default-last-message"></span>
+    </div>
+</div>
+<span id="default-message">녹음을 진행하려면, 아래의 버튼을 눌러주세요</span>
+
+<div class="button-box">
+    <button id="recordButton">
+        <div class="outer-circle"></div>
+        <div class="inner-circle"></div>
+    </button>
+</div>
+
+{% endblock %}
+
+{% block extra-script %}
+    <script type="text/javascript" src="/static/js/chatroom.js"></script>
+{% endblock %}
+
+

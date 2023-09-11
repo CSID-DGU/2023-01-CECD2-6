@@ -1,0 +1,36 @@
+{% load django_bootstrap5 %}
+{% load static %}
+
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <title>Attention</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    <link rel="stylesheet" href="static/css/navbar.css">
+    <link rel="stylesheet" href="static/css/card.css">
+    {% block extra-style %}{% endblock %}
+</head>
+
+<body>
+    {% bootstrap_messages %}
+    <div {% if request.resolver_match.url_name == 'home' %} class="home-outer-box"{% else %} class="other-outer-box"{% endif %}>
+    <div class="inner-box">
+            <div {% if request.resolver_match.url_name == 'home' %} class="home-card"{% else %} class="other-card"{% endif %}>
+                {% if request.resolver_match.url_name != 'home'%}
+                    <div class="card-header">
+                            {% include 'main/navbar.html' %}
+                    </div>
+                {% endif %}                      
+                <div class="card-body">
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+        </div>
+    </div> 
+    {% block extra-script %}{% endblock %}
+</body>
+
+</html>

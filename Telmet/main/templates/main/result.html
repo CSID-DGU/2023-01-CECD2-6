@@ -1,0 +1,115 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block extra-style %}
+<link rel="stylesheet" href="static/css/result.css">
+<link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+
+{% block content %}
+<div class="cards-row">
+    <div class="card-outer-box">
+        <div class="card-inner-box">
+            <div class="origin-card">
+                <div class="origin-card-header">
+                    <div class="origin-card-title">
+                        Telmet State
+                    </div>
+                    <div class="origin-card-logo">
+                        <i class="fa-solid fa-headset" style="color: #f6747a;"></i> 
+                    </div>
+                </div>
+                <div class="origin-card-body">
+                    <div class="origin-card-content" id="state-content">
+                        {% if is_shutdown == False %}
+                            Normal&nbsp;<i class="fa-regular fa-thumbs-up fa-xs" id="content-logo" style="color:#4b57fc"></i> 
+                        {% else %}
+                            Shutdown&nbsp;<i class="fa-solid fa-bolt fa-xs" id="content-logo" style="color: #f6dc35;"></i>
+                        {% endif %}
+                    </div>
+                    <div class="origin-card-detail">
+                        <span>= whether shutdown has occurred</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="origin-card" id="count-card">
+                <div class="origin-card-header">
+                    <div class="origin-card-title">
+                        Total Count
+                    </div>
+                    <div class="origin-card-logo">
+                        <i class="fa-solid fa-list-check" style="color: #f6747a;"></i>
+                    </div>
+                </div>
+                <div class="origin-card-body">
+                    <div class="origin-card-content">
+                        {{total_count}} ea
+                    </div>
+                    <div class="origin-card-detail">
+                        <span id="normal">= normal({{normal_count}}) </span>+
+                        <span id="abuse">abuse({{abuse_count}}) </span>+
+                        <span id="sexual">sexual({{sexual_count}})</span>
+                    </div>
+                </div>
+            </div>
+            <div class="origin-card">
+                <div class="origin-card-header">
+                    <div class="origin-card-title">
+                        Record Time
+                    </div>
+                    <div class="origin-card-logo">
+                        <i class="fa-solid fa-microphone" style="color: #f6747a;"></i>
+                    </div>
+                </div>
+                <div class="origin-card-body">
+                    <div class="origin-card-content" id="record-content">
+                        {{record_time}} sec
+                    </div>
+                    <div class="origin-card-detail">
+                        <span>= immediately after button press </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="table-row">
+    <div class="table-outer-box">
+        <div class="table-inner-box">
+            <table>
+                <thead class="table-header">
+                    <tr class="table-header-row">
+                        <th class="num-th">Num</th>
+                        <th class="time-th">Time</th>
+                        <th class="content-th">Content</th>
+                        <th class="result-th">Result</th>
+                    </tr>
+                </thead>
+                <tbody class="table-body">
+                    {% if result_table|length == 0 %}
+                    <td class="none-td">Telmet 실행 후, 결과를 확인하세요</td>
+                    {% endif %}
+                    {% for row in result_table %}
+                    <tr>
+                        <td class="num-td">{{row.Num}}</td>
+                        <td class="time-td">{{row.Time}}</td>
+                        <td class="content-td" >{{row.Content}}</td>
+                        <td class="result-td" {% if row.Result == "Abuse"%} id="abuse-row" {% elif row.Result == "Sexual" %} id="sexual-row" {% endif %}>{{row.Result}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra-script %}
+{% endblock %}
+
+

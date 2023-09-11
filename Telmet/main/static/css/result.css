@@ -1,0 +1,220 @@
+/* Card Box CSS */
+
+.cards-row{
+    height:30%;
+}
+
+.card-outer-box{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+}
+
+.card-inner-box{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    width:80%;
+    height:100%;
+}
+
+/* Origin Card CSS */
+
+.origin-card{
+    width:30%;
+    height:70%;
+    border-top:0.3em solid #FFB2B2;
+    background-color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#count-card{
+    border-top:0.3em solid #FFB2B2;
+}
+
+.origin-card-header{
+    margin-top:0.5em;
+    display:flex;
+    justify-content: space-evenly;
+    height:30%;
+}
+
+.origin-card-title{
+    display:flex;
+    align-items: start;
+    font-size: 1.3em;
+    font-weight: bold;
+    width:75%;
+    margin-left:0.5em;
+}
+
+.origin-card-logo{
+    width:20%;
+    font-size:1.8em;
+}
+
+.origin-card-body{
+    color:grey;
+    height:65%;
+    font-size:2.3em;
+    font-weight:bolder;
+}
+
+.origin-card-content{
+    display:flex;
+    align-items: center;
+
+    margin-left:0.5em;
+    height: 65%;
+    width: 100%;
+    font-size:1em;
+}
+
+.origin-card-detail{
+    color:#03020273;
+    font-size:0.3em;
+    font-weight: lighter;
+    height:30%;
+    margin-left:1.9em;
+}
+
+#state-content{
+    font-size:0.8em;
+}
+
+#content-logo{
+    margin-top:0.4em;
+}
+
+/* Table Box CSS */
+
+.table-row{
+    height:70%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-outer-box{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-inner-box{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table{
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
+                0 2px 2px rgba(0,0,0,0.07), 
+                0 2px 2px rgba(0,0,0,0.07), 
+                0 2px 4px rgba(0,0,0,0.07),
+                0 4px 8px rgba(0,0,0,0.07), 
+                0 8px 16px rgba(0,0,0,0.07);   
+    border-collapse: collapse;
+    width:100%;
+}
+
+.table-header{
+    display:table;
+    height:1.5em;
+    color:white;
+    font-size : 1.2em;
+    background-color: #FFB2B2;
+}
+
+th{
+    padding:0.5em;
+    word-break: break-all;
+}
+
+.num-th{
+    width: 4em;
+    padding-left:0.7em;
+}
+.time-th{
+    width: 5em;
+    background-color: #FFB2B2;
+
+}
+.content-th{
+    width: 22em;
+    background-color: #FFB2B2;
+
+}
+.result-th{
+    width: 4.5em;
+    /* border-top-right-radius: 0.3em; */
+    background-color: #FFB2B2;
+}
+
+.table-body{
+    font-weight: bolder;
+    color:rgb(72, 72, 72);
+    display:block;
+    height: 17.5em;
+    overflow-y: auto;
+}
+
+.table-body::-webkit-scrollbar{
+    width:0.5em;
+}
+
+.table-body::-webkit-scrollbar-track {
+    background-color: #FFB2B2;
+    border-radius: 1em;    
+}
+
+.table-body::-webkit-scrollbar-thumb{
+    background-color: #ff8787;
+    border-radius: 1em;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+
+td{
+    padding:0.7em;
+    word-break: break-all;
+}
+
+tr{
+    display:table;
+    width:100%;
+}
+
+.none-td{
+    font-size:1.5em;
+    text-align: center;
+    height:11.6em;
+}
+
+.num-td{
+    width: 4em;
+    padding-left:2em;
+
+}
+.time-td{
+    width: 5em;
+}
+.content-td{
+    width:22em;
+}
+.result-td{
+    width:4.5em;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #fff3f3;
+}
+
+#abuse-row{
+    color : rgb(255, 113, 113);
+}
+
+#sexual-row{
+    color : rgb(122, 122, 255);
+}
